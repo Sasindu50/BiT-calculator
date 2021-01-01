@@ -237,5 +237,5 @@ void end()
     printf("\n\n\n\t\t++++++THANK YOU++++++\n");
     printf("Created by : ~SaSiYa~ 2021;\t\t");
     printf("BiT Calculator 1.0\n");
-    return -1;
+    
 }
