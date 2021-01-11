@@ -9,6 +9,18 @@ float powe(float num1,float num2);
 float squ(float num1);
 void end();
 int menu();
+long d2b(long num);
+long d2o(long num);
+char d2h(long num);
+long b2d(long num);
+long b2o(long num);
+long b2h(long num);
+long o2b(int num);
+long o2d(int num);
+char h2b(char h[]);
+long h2o(char h[]);
+long h2d(char h[]);
+int conversion();
 
 
 int main()
@@ -143,6 +155,131 @@ int main()
         printf("Answer = %.2f",total6);
         temp = total6;
         break;
+           
+    case 7:
+         result = conversion();
+
+        switch(result)
+        {
+        case 2:
+            printf("\nenter decimal number : ");
+            scanf("%ld",&d);
+            long a = d2b(d);
+
+            printf("Answer = %ld",a);
+            break;
+
+        case 8:
+            printf("\n\n~~~~Sorry!!! this function is under construction~~~~\n\n");
+            end();
+            /*printf("\nEnter decimal number : ");
+            scanf("%ld",&d);
+             a = d2o(d);
+
+            printf("Answer = %ld",a);*/
+            break;
+
+        case 16:
+            printf("\n\n~~~~Sorry!!! this function is under construction~~~~\n\n");
+            end();
+
+            /*printf("\nEnter decimal number : ");
+            scanf("%ld",&d);
+
+            char s = d2h(d);
+
+            printf("Answer = %c",s);*/
+            break;
+
+        case 21:
+            printf("\nEnter binary number : ");
+            scanf("%ld",&d);
+
+             a = b2d(d);
+
+            printf("Answer = %ld",a);
+            break;
+
+        case 28 :
+            printf("\nEnter binary number : ");
+            scanf("%ld",&d);
+
+             a = b2o(d);
+
+            printf("Answer = %ld",a);
+            break;
+
+        case 216:
+            printf("\n\n~~~~Sorry!!! this function is under construction~~~~\n\n");
+            end();
+            /*printf("\nEnter binary number : ");
+            scanf("%ld",&d);
+
+             a = b2h(d);
+
+            printf("Answer = %ld",a);*/
+            break;
+
+        case 82:
+            printf("\nEnter octal umber : ");
+            scanf("%d",&k);
+
+             a = o2b(k);
+            printf("Answer = %ld",a);
+            break;
+
+        case 810:
+            printf("\nEnter octal number : ");
+            scanf("%d",&k);
+
+             a = o2d(k);
+
+            printf("Asnwer = %ld",a);
+            break;
+
+        case 816:
+            printf("\n\n~~~~Sorry!!! this function is under construction~~~~\n\n");
+            end();
+            /*printf("\nEnter octal number : ");
+            scanf("%d",&k);
+
+             a = o2b(k);
+             b = b2h(a);
+
+
+            printf("Answer = %ld",b);*/
+            break;
+
+        case 162:
+            printf("\n\n~~~~Sorry!!! this function is under construction~~~~\n\n");
+            end();
+            /*printf("\nEnter Hexa-decimal number : ");
+            scanf("%s",h);
+
+             h2b(h);*/
+             break;
+
+        case 168:
+            printf("\n\n~~~~Sorry!!! this function is under construction~~~~\n\n");
+            end();
+            /*printf("\nEnter Hexa-decimal number : ");
+            scanf("%s",h);
+             a = h2o(h);
+            printf("Answer = %ld",a);*/
+            break;
+        case 1610:
+            printf("\n\n~~~~Sorry!!! this function is under construction~~~~\n\n");
+            end();
+            /*printf("\nEnter Hexa-decimal number : ");
+            scanf("%s",h);
+             a= h2d(h);
+            printf("Answer = %ld",a);*/
+            break;
+
+
+
+
+    }
 
    }
 
@@ -231,6 +368,127 @@ float squ(float num1)
     float total = sqrt(num1);
     return total;
 }
+
+int conversion()
+{
+    int n;
+
+    printf("\n~~~~CONVERSION~~~~\n");
+    printf("press 2 to decimal to binary conversion\n");
+    printf("press 8 to decimal to octal conversion\n");
+    printf("press 16 to decimal to hexa-decimal conversion\n");
+    printf("press 21 to binary to decimal conversion\n");
+    printf("press 28 to binary to octal conversion\n");
+    printf("press 216 to binary to hexa-decimal conversion\n");
+    printf("press 82 to octal to binary conversion\n");
+    printf("press 810 to octal to decimal conversion\n");
+    printf("press 816 to octal hexa-decimal conversion\n");
+    printf("press 162 to hexa-decimal to binary conversion\n");
+    printf("press 168 to hexa-decimal to octal conversion\n");
+    printf("press 1610 to hexa-decimal to decimal conversion\n");
+
+    printf("\nEnter your response : ");
+    scanf("%ld",&n);
+
+    return n;
+
+}
+
+long d2b(long num)
+{
+    long bin=0,rem=0,place=1;
+
+    while(num)
+    {
+        num = num/2;
+        rem = num%2;
+        bin = bin + (rem * place);
+        place = place * 10;
+    }
+
+    return bin;
+}
+
+char d2h(long num)
+{
+
+    int i=0;
+    char digit[100];
+
+
+   while(num >0)
+   {
+       int rem = num %16;
+       if(rem <10)
+       {
+           digit[i] = '0' +rem;
+       }
+       else
+       {
+           digit[i] = 'A' + (rem -10);
+
+        }
+
+        num = num /16;
+        i++;
+
+   }
+   while(i--)
+   {
+       return digit[i];
+   }
+
+}
+
+long b2d(long num)
+{
+    long dec=0,place=1;
+
+
+    while(num!=0)
+    {
+      int rem = num % 10;
+      dec = dec + (rem*place);
+      num = num /10;
+      place = place *2;
+    }
+
+  return dec;
+}
+
+long b2o(long num)
+{
+    long dec=0,i=0;
+
+    while(num != 0)
+    {
+      long rem = num %10;
+      num = num / 10;
+      dec = dec + rem * pow(2,i);
+      i++;
+    }
+
+  return dec;
+}
+long o2d(int num)
+{
+
+    long dec=0,k=0,rem;
+
+
+
+    while(num)
+    {
+        rem=num%10;
+        dec=dec+rem*pow(8,k);
+        num = num/10;
+        k++;
+
+    }
+
+    return dec;
+}
+
 
 void end()
 {
