@@ -46,7 +46,7 @@ int main()
    {
      n = menu();
 
-     if(n>6)
+     if(n>7)
      {
          printf("\n***Invalid Input****\n");
          end();
@@ -327,7 +327,8 @@ int menu()
     printf("press 3 to multiplication\n");
     printf("press 4 to division\n");
     printf("press 5 to get power\n");
-    printf("press 6 to get root\n\n");
+    printf("press 6 to get root\n");
+   printf("press 7 to number system conversion\n");
 
     printf("Enter your response : ");
     scanf("%d",&n);
@@ -496,11 +497,44 @@ long o2d(int num)
     return dec;
 }
 
+long o2b(int num)
+{
+    //printf("Sorry!!! this function is underconstruction\n\n");
+    int rem=0,place=0,dec=0;
+    long bin=0;
+
+
+
+    while(num)
+    {
+        rem = num%10;
+        dec = dec + rem*pow(8,place);
+        num = num/10;
+        place++;
+    }
+
+    place=1;
+    rem=0;
+    while(dec)
+    {
+        rem=dec%2;
+        bin=bin+(rem*place);
+        dec=dec/2;
+        place=place*10;
+
+    }
+
+
+    return bin;
+
+}
+
+
 
 void end()
 {
     printf("\n\n\n\t\t++++++THANK YOU++++++\n");
     printf("Created by : ~SaSiYa~ 2021;\t\t");
-    printf("BiT Calculator 1.0\n");
+    printf("BiT Calculator 1.5\n");
     
 }
