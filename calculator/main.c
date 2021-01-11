@@ -31,6 +31,13 @@ int main()
    float temp;
    int i=0;
    char yes,ans;
+   long d;
+   char s;
+   char h[100];
+   int k;
+   long b;
+   int result;
+   long a;
 
    printf("\t\t**********CALCULATOR*********\n\n");
 
