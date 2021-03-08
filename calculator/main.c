@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include<math.h>
-float sum(float num1,float num2);
-float min(float num1,float num2);
-float mul(float num1,float num2);
-float divi(float num1,float num2);
-float powe(float num1,float num2);
+float sum(float num1,float num2);//sum function
+float min(float num1,float num2);//subsration  function
+float mul(float num1,float num2);//multplication fuction  
+float divi(float num1,float num2);//divsion function
+float powe(float num1,float num2);//power function
 float squ(float num1);
 void end();
 int menu();
