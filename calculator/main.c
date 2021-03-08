@@ -6,7 +6,7 @@ float min(float num1,float num2);//subsration  function
 float mul(float num1,float num2);//multplication fuction  
 float divi(float num1,float num2);//divsion function
 float powe(float num1,float num2);//power function
-float squ(float num1);
+float squ(float num1);//
 void end();
 int menu();
 long d2b(long num);
