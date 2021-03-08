@@ -2,25 +2,25 @@
 #include <stdlib.h>
 #include<math.h>
 float sum(float num1,float num2);//sum function
-float min(float num1,float num2);//subsration  function
-float mul(float num1,float num2);//multplication fuction  
-float divi(float num1,float num2);//divsion function
+float min(float num1,float num2);//substraction  function
+float mul(float num1,float num2);//multiplication function
+float divi(float num1,float num2);//devision function
 float powe(float num1,float num2);//power function
-float squ(float num1);//
-void end();
-int menu();
-long d2b(long num);
-long d2o(long num);
-char d2h(long num);
-long b2d(long num);
-long b2o(long num);
-long b2h(long num);
-long o2b(int num);
-long o2d(int num);
-char h2b(char h[]);
-long h2o(char h[]);
-long h2d(char h[]);
-int conversion();
+float squ(float num1);//square function
+void end();//end statements
+int menu();//main menu
+long d2b(long num);//binary to decimal
+long d2o(long num);//decimal to octal
+char d2h(long num);//decimal to hexa
+long b2d(long num);//binary to decimal
+long b2o(long num);//binary to octal
+long b2h(long num);//binary to hexa
+long o2b(int num);//octal to binary
+long o2d(int num);//octal to decimal
+char h2b(char h[]);//hexa to binary
+long h2o(char h[]);//hexa to octal
+long h2d(char h[]);//hexa to decimal
+int conversion();//conversion menu
 
 
 int main()
@@ -44,18 +44,18 @@ int main()
 
    do
    {
-     n = menu();
+     n = menu();//call the menu function
 
-     if(n>7)
+     if(n>7)//check the number
      {
          printf("\n***Invalid Input****\n");
          end();
          return -1;
 
      }
-     switch(n)
+     switch(n)//check the menu number
     {
-    case 1:
+    case 1://call the sum function
         if(i==1)
         {
            num1 = temp;
@@ -72,7 +72,7 @@ int main()
         temp = total1;
         break;
 
-    case 2:
+    case 2://call the substraction function
         if(i==1)
         {
            num1 = temp;
@@ -91,7 +91,7 @@ int main()
         temp = total2;
         break;
 
-    case 3:
+    case 3://call the multiplication function
         if(i==1)
         {
            num1 = temp;
@@ -110,7 +110,7 @@ int main()
         temp = total3;
         break;
 
-    case 4:
+    case 4://call the devision function
         if(i==1)
         {
            num1 = temp;
@@ -129,7 +129,7 @@ int main()
         temp = total4;
         break;
 
-   case 5:
+   case 5://call the power function
        if(i==1)
         {
            num1 = temp;
@@ -148,7 +148,7 @@ int main()
         temp = total5;
         break;
 
-    case 6:
+    case 6://cal the square function
         if(i==1)
         {
            num1 = temp;
@@ -162,13 +162,13 @@ int main()
         printf("Answer = %.2f",total6);
         temp = total6;
         break;
-           
-    case 7:
+
+    case 7://call the conversion menu
          result = conversion();
 
         switch(result)
         {
-        case 2:
+        case 2://binary to decimal
             printf("\nenter decimal number : ");
             scanf("%ld",&d);
             long a = d2b(d);
@@ -176,7 +176,7 @@ int main()
             printf("Answer = %ld",a);
             break;
 
-        case 8:
+        case 8://decimal to octal
             printf("\n\n~~~~Sorry!!! this function is under construction~~~~\n\n");
             end();
             /*printf("\nEnter decimal number : ");
@@ -186,7 +186,7 @@ int main()
             printf("Answer = %ld",a);*/
             break;
 
-        case 16:
+        case 16://decimal to hexa
             printf("\n\n~~~~Sorry!!! this function is under construction~~~~\n\n");
             end();
 
@@ -198,7 +198,7 @@ int main()
             printf("Answer = %c",s);*/
             break;
 
-        case 21:
+        case 21://binary to decimal
             printf("\nEnter binary number : ");
             scanf("%ld",&d);
 
@@ -207,7 +207,7 @@ int main()
             printf("Answer = %ld",a);
             break;
 
-        case 28 :
+        case 28 ://binary to octal
             printf("\nEnter binary number : ");
             scanf("%ld",&d);
 
@@ -216,7 +216,7 @@ int main()
             printf("Answer = %ld",a);
             break;
 
-        case 216:
+        case 216://binary to hexa
             printf("\n\n~~~~Sorry!!! this function is under construction~~~~\n\n");
             end();
             /*printf("\nEnter binary number : ");
@@ -227,7 +227,7 @@ int main()
             printf("Answer = %ld",a);*/
             break;
 
-        case 82:
+        case 82://octal to decimal
             printf("\nEnter octal umber : ");
             scanf("%d",&k);
 
@@ -235,7 +235,7 @@ int main()
             printf("Answer = %ld",a);
             break;
 
-        case 810:
+        case 810://octal to decimal
             printf("\nEnter octal number : ");
             scanf("%d",&k);
 
@@ -244,7 +244,7 @@ int main()
             printf("Asnwer = %ld",a);
             break;
 
-        case 816:
+        case 816://octal to hexa
             printf("\n\n~~~~Sorry!!! this function is under construction~~~~\n\n");
             end();
             /*printf("\nEnter octal number : ");
@@ -256,7 +256,7 @@ int main()
 
             printf("Answer = %ld",b);*/
             break;
-
+//hexa to binary
         case 162:
             printf("\n\n~~~~Sorry!!! this function is under construction~~~~\n\n");
             end();
@@ -266,7 +266,7 @@ int main()
              h2b(h);*/
              break;
 
-        case 168:
+        case 168://hexa to octal
             printf("\n\n~~~~Sorry!!! this function is under construction~~~~\n\n");
             end();
             /*printf("\nEnter Hexa-decimal number : ");
@@ -274,7 +274,7 @@ int main()
              a = h2o(h);
             printf("Answer = %ld",a);*/
             break;
-        case 1610:
+        case 1610://hexa to decimal
             printf("\n\n~~~~Sorry!!! this function is under construction~~~~\n\n");
             end();
             /*printf("\nEnter Hexa-decimal number : ");
@@ -297,7 +297,7 @@ int main()
 
 
 
-    if(ans == 'y' || ans == 'Y')
+    if(ans == 'y' || ans == 'Y')//repetition checking
     {
         i = 1;
     }
@@ -318,7 +318,7 @@ int main()
     return 0;
 }
 
-int menu()
+int menu()//menu function
 {
     int n;
     printf("\n~~~~~Main Menu~~~~~\n");
@@ -335,7 +335,7 @@ int menu()
     return n;
 }
 
-float sum(float num1,float num2)
+float sum(float num1,float num2)//sum function
 {
     float total;
 
@@ -345,39 +345,39 @@ float sum(float num1,float num2)
 
 }
 
-float min(float num1,float num2)
+float min(float num1,float num2)//substraction function
 {
     float total = num1 - num2;
     return total;
 
 }
 
-float mul(float num1,float num2)
+float mul(float num1,float num2)//multiplication function
 {
     float total = num1 * num2;
     return total;
 
 }
 
-float divi(float num1,float num2)
+float divi(float num1,float num2)//devision function
 {
     float total = num1 / num2;
     return total;
 }
 
-float powe(float num1,float num2)
+float powe(float num1,float num2)//power function
 {
     float total = pow(num1,num2);
     return total;
 }
 
-float squ(float num1)
+float squ(float num1)//square function
 {
     float total = sqrt(num1);
     return total;
 }
 
-int conversion()
+int conversion()//conversion menu
 {
     int n;
 
@@ -402,7 +402,7 @@ int conversion()
 
 }
 
-long d2b(long num)
+long d2b(long num)//decimal to binary
 {
     long bin=0,rem=0,place=1;
 
@@ -417,7 +417,7 @@ long d2b(long num)
     return bin;
 }
 
-char d2h(long num)
+char d2h(long num)//decimal to hexa
 {
 
     int i=0;
@@ -448,7 +448,7 @@ char d2h(long num)
 
 }
 
-long b2d(long num)
+long b2d(long num)//binary to decimal
 {
     long dec=0,place=1;
 
@@ -464,7 +464,7 @@ long b2d(long num)
   return dec;
 }
 
-long b2o(long num)
+long b2o(long num)//binary to octal
 {
     long dec=0,i=0;
 
@@ -478,7 +478,7 @@ long b2o(long num)
 
   return dec;
 }
-long o2d(int num)
+long o2d(int num)//octal to decimal
 {
 
     long dec=0,k=0,rem;
@@ -497,7 +497,7 @@ long o2d(int num)
     return dec;
 }
 
-long o2b(int num)
+long o2b(int num)//octal to binary
 {
     //printf("Sorry!!! this function is underconstruction\n\n");
     int rem=0,place=0,dec=0;
@@ -531,10 +531,10 @@ long o2b(int num)
 
 
 
-void end()
+void end()//end function
 {
     printf("\n\n\n\t\t++++++THANK YOU++++++\n");
     printf("Created by : ~SaSiYa~ 2021;\t\t");
     printf("BiT Calculator 1.5\n");
-    
+
 }
